@@ -1,6 +1,6 @@
 // Initial variables
 @import "../node_modules/bulma/sass/utilities/initial-variables";
-$body-size: 10px;
+$body-size: 14px;
 
 $black: #071f32;
 $grey-darker: #1f3445;
@@ -192,4 +192,12 @@ li {
   	top: 1.75em;
   	width: 1em;
   }
+}
+
+// fix conflicts with ods
+@import "_ods-suffix";
+
+// General settings
+::selection {
+	background: rgba(53,75,207,.3);
 }
