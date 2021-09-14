@@ -1,0 +1,67 @@
+// Initial variables
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+$black: #071f32;
+$grey-darker: #1f3445;
+$grey-dark: #6a7884;
+$grey-medium: rgba(53,75,207,.3);
+$grey: #f2f2f2;
+$white: #ffffff;
+$blue: #354bcf;
+$red: #e8404e;
+
+$link: $red;
+$primary: $blue;
+$background: $white;
+
+$size-1: 4.2rem;
+$size-2: 3.1rem;
+$size-3: 2.2rem;
+$size-4: 1.8rem;
+$size-5: 1.5rem;
+$size-6: 1.3rem;
+$size-7: 1rem;
+
+$size-large: $size-3;
+$size-medium: $size-4;
+$size-normal: $size-5;
+$size-small: $size-7;
+
+$weight-bold: 900;
+$weight-semibold: 700;
+$weight-medium: 600;
+$weight-normal: 400;
+$weight-light: 300;
+
+$gap: 45px;
+
+$radius: 0px;
+$radius-small: 0px;
+$radius-large: 0px;
+
+$border: $grey;
+$text: $black;
+$text-strong: $black;
+
+$family-sans-serif: "Montserrat", "Arial", sans-serif;
+
+// Box
+$box-shadow: 12px 12px $grey;
+
+// Buttons
+$button-padding-vertical: 1em;
+$button-padding-horizontal: 1.25em;
+$button-border-color: transparent;
+
+// Icons
+$icon-dimensions: $size-5;
+$icon-dimensions-small: $size-7;
+$icon-dimensions-medium: $size-3;
+$icon-dimensions-large: $size-2;
+
+// Title
+$subtitle-color: $link;
+
+
+// 4. Import the rest of Bulma
+@import "../node_modules/bulma/bulma";
