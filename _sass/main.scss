@@ -1,5 +1,6 @@
 // Initial variables
 @import "../node_modules/bulma/sass/utilities/initial-variables";
+$body-size: 10px;
 
 $black: #071f32;
 $grey-darker: #1f3445;
@@ -60,8 +61,54 @@ $icon-dimensions-medium: $size-3;
 $icon-dimensions-large: $size-2;
 
 // Title
+$title-weight: $weight-bold;
+$subtitle-weight: $weight-bold;
+$title-family: "Montserrat";
+$subtitle-weight: "Montserrat";
 $subtitle-color: $link;
 
+// Spacing
+$spacing-values: ("medium": 2rem);
+
+// Menu
+$menu-label-color: $black;
+$menu-label-font-size: 1em;
+$menu-label-letter-spacing: 0;
 
 // 4. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
+
+// Tags
+.tag:not(body) {
+  padding: 1.5em;
+  text-transform: uppercase;
+}
+
+// Menu
+// ul.menu-list {
+//   list-style: disc inside;
+// }
+
+.menu-label {
+  text-transform: none;
+  font-weight: $weight-medium;
+}
+
+ul.menu-list li {
+  position: relative;
+  margin-left: 2.9rem;
+
+  &:before {
+  	background-color: #071f32;
+  	border-radius: 50%;
+  	content: "";
+  	display: block;
+  	font-size: 0.5em;
+  	height: 1em;
+  	left: -2.9rem;
+  	position: absolute;
+  	top: 1.75em;
+  	transition: background-color .2s ease;
+  	width: 1em;
+  }
+}
