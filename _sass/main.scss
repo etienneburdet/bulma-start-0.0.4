@@ -68,16 +68,85 @@ $subtitle-weight: "Montserrat";
 $subtitle-color: $link;
 
 // Spacing
-$spacing-values: ("medium": 2rem);
+$spacing-values: ("medium": 2rem, "large": 4rem);
 
 // Menu
 $menu-label-color: $black;
+$menu-item-hover-color: $link;
 $menu-label-font-size: 1em;
 $menu-label-letter-spacing: 0;
 
 // 4. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
 
+/* Overrides */
+// Title
+.content .title {
+  &.is-2 {
+    margin: 6rem 0 3rem;
+  }
+
+  &.is-3 {
+    margin: 3rem 0;
+  }
+
+  &.is-2:after, &.is-3:before {
+  	background: $grey;
+  	content: "";
+  	display: block;
+  	height: .6rem;
+  	width: 100%;
+  }
+
+  &.is-2:after {
+    margin-top: 1.2rem;
+  }
+
+  &.is-3:before {
+    margin-bottom: 2rem;
+  }
+
+  &.is-2 + .is-3:before {
+    display: none;
+  }
+}
+
+// Button
+.button {
+  &.button-icon.is-rounded {
+    width: 1.5em;
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+  }
+
+  &.is-light.is-link {
+    background-color: $grey;
+    color: $grey-darker;
+    transition: background-color .2s ease;
+
+    &:hover {
+      background-color: $link;
+      color: white;
+      transition: background-color .2s ease;
+    }
+  }
+  @each $name, $pair in $button-colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+
+    &.is-light.is-#{name} {
+      background-color: $grey-dark;
+      color: $grey-darker;
+
+      &:hover,
+      &.is-hovered {
+        background-color: $color;
+        border-color: transparent;
+        color: $color-invert;
+      }
+    }
+  }
+}
 // Tags
 .tag:not(body) {
   padding: 1.5em;
@@ -85,18 +154,31 @@ $menu-label-letter-spacing: 0;
 }
 
 // Menu
-// ul.menu-list {
-//   list-style: disc inside;
-// }
-
 .menu-label {
   text-transform: none;
   font-weight: $weight-medium;
 }
 
-ul.menu-list li {
+// Block
+.block {
+  padding: 1rem;
+  border-left: .1rem solid rgba(7,31,50,.15);
+
+  span {
+    margin-left: .5em;
+  }
+}
+
+// General list
+.content ul {
+  list-style: none;
+  margin: 0;
+}
+
+li {
   position: relative;
   margin-left: 2.9rem;
+  margin-bottom: .6rem;
 
   &:before {
   	background-color: #071f32;
@@ -108,7 +190,6 @@ ul.menu-list li {
   	left: -2.9rem;
   	position: absolute;
   	top: 1.75em;
-  	transition: background-color .2s ease;
   	width: 1em;
   }
 }

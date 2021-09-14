@@ -40,8 +40,9 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-es2015-ie": "^6.7.0",
     "bulma": "^0.9.3",
+    "cssnano": "^5.0.8",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.0",
+    "postcss-cli": "^8.3.1",
     "sass": "^1.40.0",
     "sirv-cli": "^1.0.14"
   },
@@ -61,12 +62,15 @@
   "scripts": {
     "css-build": "sass _sass/main.scss css/main.css",
     "css-deploy": "npm run css-build && npm run css-postcss",
-    "css-postcss": "postcss --use autoprefixer --output css/main.css css/main.css",
+    "css-postcss": "postcss --use autoprefixer cssnano --output css/main.css css/main.css",
     "css-watch": "npm run css-build -- --watch",
     "deploy": "npm run css-deploy && npm run js-build",
     "js-build": "babel _javascript --out-dir lib",
     "js-watch": "npm run js-build -- --watch",
     "start": "npm-run-all --parallel css-watch js-watch"
   },
-  "version": "0.0.4"
+  "version": "0.0.4",
+  "dependencies": {
+    "postcss": "^8.3.6"
+  }
 }
